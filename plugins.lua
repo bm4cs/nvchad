@@ -1,5 +1,31 @@
 local plugins = {
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        -- defaults 
+        "vim",
+        "lua",
+        "vimdoc",
+
+        -- web dev 
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+
+        -- linux hacking
+        "python",
+
+       -- low level
+        "c",
+        "rust",
+        "zig"
+      },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/null-ls.nvim",
@@ -16,6 +42,11 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "lua-language-server",
+        "html-lsp",
+        "prettier",
+        "stylua",
+        "ruff-lsp",
         "rust-analyzer",
       },
     },
@@ -23,6 +54,10 @@ local plugins = {
   {
     "tpope/vim-fugitive",
     cmd = { "Git", "Gedit", "Gsplit", "Gdiffsplit" },
+  },
+  {
+    "sbdchd/neoformat",
+    cmd = { "Neoformat" },
   },
 }
 return plugins
